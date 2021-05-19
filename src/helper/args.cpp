@@ -14,7 +14,7 @@ const string args[8] = {
 
 int ProcessCommands(int argc, vector<string> argv){
     if(argv.empty()){
-        return -100;
+        return 100;
     }
     if(argv[0].empty()){
         return 100;

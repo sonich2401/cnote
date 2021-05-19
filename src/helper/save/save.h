@@ -3,13 +3,16 @@
 #include <sys/types.h>
 #include <pwd.h>
 
-extern const string DEFAULT_PATH;
+#ifndef HOME_DIR
+#define HOME_DIR
 extern struct passwd *pw;
 
 extern const string homedir;
+#endif
 
-
-
+#ifdef HOME_DIR
+extern const string DEFAULT_PATH;
+#endif
 
 struct Entry{
     string command;

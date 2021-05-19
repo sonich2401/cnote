@@ -5,6 +5,7 @@ struct passwd *pw = getpwuid(getuid());
 
 const string homedir = pw->pw_dir;
 
+const string DEFAULT_PATH = homedir + "/.cnote";
 
 void Save::SetPath(string new_path){
     remove_og_spaces(new_path);

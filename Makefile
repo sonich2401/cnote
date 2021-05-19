@@ -25,7 +25,7 @@ O_FILES = $(foreach cc,$(CPP_FILES),  $(ODIR)/$(notdir $(basename $(cc)).o) )
 
 
 BUILD := $(shell basename $(CURDIR))
-VERSION := 0.0
+VERSION := 1.0
 ifeq ($(UNAME), Linux)
 	DEFINE_PREFIX = -
 	OS_CLEAR = clear

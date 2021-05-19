@@ -3,11 +3,9 @@
 
 
 
+extern const string homedir;
 
-
-const string DEFAULT_PATH = {
-    homedir + "/.cnote"
-};
+extern const string DEFAULT_PATH;
 
 void Entry::print(bool type){
     printf("%s:\n",this->command.c_str());
@@ -33,6 +31,8 @@ bool DirExists(string path){
 }
 
 
+
+
 void Save::Export(){
     string command = "mkdir " + homedir + "/.cnote";
 
@@ -42,7 +42,7 @@ void Save::Export(){
     
     //export path
     std::fstream file(homedir + "/.cnote/path", std::ios::out);
-    command = "cp "+homedir+"/.cnote/path " + homedir+"/.cnote/path.old";
+    command = "cp "+homedir+"/.cnote/path " + homedir+"/.cnote/path.old >";
     system(command.c_str());
     file << this->path;
     file.close();
